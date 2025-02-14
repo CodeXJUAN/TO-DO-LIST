@@ -1,0 +1,40 @@
+Boton del +
+------------
+
+Create Task
+
+Se abre un pop-up delante de todos 
+los elementos de la pantalla.
+
+    - Name of Task
+    - Hour of Task
+    - Category of Task
+        - Work
+        - Family
+        - Shopping
+
+Create Project
+
+Se abre un pop-up delante de todos 
+los elementos de la pantalla.
+
+    - Name of Project
+    - Date to Present Project
+    - Diferents icons or colors for Projects
+
+
+Anytime 
+-----------
+
+Create Task
+
+Se abre un pop-up delante de todos 
+los elementos de la pantalla.
+
+    - Name of Task
+    - Day and Month
+    - Hour of Task
+    - Category of Task
+        - Work
+        - Family
+        - Shopping

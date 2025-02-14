@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="shortcut icon" href="/assets/cheque.png" type="image/x-icon">
+    <title>TODO List | Juan Manuel López</title>
+</head>
+<body>
+    <header>    
+        <nav>
+            <div>
+                <button id="1" class="navbtn">
+                    <img class="navimg" src="/assets/menu.svg">
+                </button>
+            </div>
+            <div>
+                <button id="3" class="navbtn">
+                    <img class="navimg" src="/assets/usuario.png">
+                </button>
+            </div>
+        </nav>    
+    </header>
+    <main>
+        <div class="mainheader">
+            <div class="divdate">
+                <h1 class="today">Today</h1>
+                <h1 id="date"></h1>
+            </div>
+            <div>
+                <button class="btnflt">
+                    <img class="navimg" src="/assets/filtrar.png">
+                </button>
+            </div>
+        </div>
+        <div>
+            <div id="create-crttsk">
+                <div class="top-div">
+                    <div>
+                        <h2>Create Task</h2>
+                    </div>
+                    <div>
+                        <button id="close-crttsk">
+                            <img class="cruz" src="/assets/cruzado.png">
+                        </button>
+                    </div>
+                </div>
+                <form action="" method="post">
+                    <div class="mid-div">
+                        <div class="form__group field">
+                            <input type="input" class="form__field" placeholder="Name" required="">
+                            <label for="name" class="form__label">Name</label>
+                        </div>
+                        <div class="form__group field">
+                            <input type="input" class="form__field" placeholder="Category" required="">
+                            <label for="name" class="form__label">Category</label>
+                        </div>
+                        <div class="form__group field">
+                            <input type="input" class="form__field" placeholder="Time" required="">
+                            <label for="name" class="form__label">Time</label>
+                        </div>
+                    </div>
+                    <div class="bot-div">
+                        <input id="save" type="submit" value="Guardar">
+                        <input id="cancel" type="button" value="Cancelar">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <button id="addbtn">
+            <img class="navimg" src="/assets/plus-pequeno.png">
+        </button>
+    </footer>
+</body>
+<script src="/JS/main.js"></script>
+</html>
