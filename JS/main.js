@@ -24,7 +24,7 @@ function tomorrowDate() {
 
 // Ejecutar funciones al cargar la página
 actualDate();
-tomorrowDate()
+tomorrowDate();
 
 document.addEventListener("DOMContentLoaded", () => {
     const menuButton = document.getElementById("1");
@@ -203,8 +203,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     document.getElementById("cancel").addEventListener("click", () => {
                         createTaskDiv.remove();
                     });
+                }
+            });
 
-                                // Agregar evento al botón crttsk
+            // Agregar evento al botón crtpr
             document.getElementById("crtpr").addEventListener("click", () => {
                 // Cerrar el menú (divtj) antes de crear el formulario
                 if (div) {
@@ -213,18 +215,18 @@ document.addEventListener("DOMContentLoaded", () => {
                     setTimeout(() => div.remove(), 300); // Coincide con la duración de la animación
                 }
 
-                let createTaskDiv = document.getElementById("create-crttsk");
+                let createProjectDiv = document.getElementById("create-crtpr");
 
-                if (!createTaskDiv) {
-                    createTaskDiv = document.createElement("div");
-                    createTaskDiv.id = "create-crttsk";
-                    createTaskDiv.innerHTML = `
+                if (!createProjectDiv) {
+                    createProjectDiv = document.createElement("div");
+                    createProjectDiv.id = "create-crtpr";
+                    createProjectDiv.innerHTML = `
                         <div class="top-div">
                             <div>
                                 <h2>Create Project</h2>
                             </div>
                             <div>
-                                <button id="close-crttsk">
+                                <button id="close-crtpr">
                                     <img class="cruz" src="/assets/cruzado.png">
                                 </button>
                             </div>
@@ -251,19 +253,19 @@ document.addEventListener("DOMContentLoaded", () => {
                         </form>
                     `;
 
-                    document.body.appendChild(createTaskDiv);
+                    document.body.appendChild(createProjectDiv);
 
                     // Evento para cerrar el div
-                    document.getElementById("close-crttsk").addEventListener("click", () => {
-                        createTaskDiv.remove();
+                    document.getElementById("close-crtpr").addEventListener("click", () => {
+                        createProjectDiv.remove();
                     });
 
                     // Evento para cancelar
                     document.getElementById("cancel").addEventListener("click", () => {
-                        createTaskDiv.remove();
+                        createProjectDiv.remove();
                     });
                 }
             });
         }
     });
-};});});
+});

@@ -162,7 +162,7 @@ hr {
 
 /* CREATE TASK */
 
-#create-crttsk {
+#create-crttsk , #create-crtpr {
     position: absolute;
     top: 30vh;
     left: 13vw;
@@ -308,7 +308,7 @@ form {
     height: 25%;   
 }
 
-#close-crttsk {
+#close-crttsk, #close-crtpr {
     background: transparent;
     border: none;
     padding: 2vh;
