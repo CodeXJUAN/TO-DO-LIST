@@ -21,7 +21,7 @@ nav , .mainheader  {
     height: auto;
 }
 
-.navbtn , .btnflt {
+.navbtn , #btnflt {
     border: none;
     background-color: transparent;
 }
@@ -156,7 +156,7 @@ hr {
     font-weight: 300;
 }
 
-.btnflt  {
+#btnflt  {
     margin: 4vh 10vw;
 }
 
@@ -271,7 +271,8 @@ form {
     padding: 1vh 2vw;
     border-radius: 2vw;
     opacity: .5;
-    transition: opacity .75s ease, color .75s ease;  
+    transition: opacity .75s ease, color .75s ease; 
+    font-weight: bold; 
 }
 
 #save:hover , #cancel:hover {
@@ -279,13 +280,13 @@ form {
 }
 
 #save {
-    border: 0.3vh solid #1971C2;
+    border: 0.4vh solid #1971C2;
     color: #1971C2;
     transition: box-shadow .75s ease, color .75s ease;  
 }
 
 #cancel {
-    border: 0.3vh solid #E03131;
+    border: 0.4vh solid #E03131;
     color: #E03131;
     transition: box-shadow .75s ease, color .75s ease;  
 }

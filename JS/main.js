@@ -104,8 +104,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-
-
 document.addEventListener("DOMContentLoaded", () => {
     const addbtn = document.getElementById("addbtn");
 
@@ -125,13 +123,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="card">
                     <ul class="list">
                         <li class="element">
-                            <button id="crtpr">
+                            <button id="crttsk">
                                 <img class="taskprojico" src="/assets/cheque.png">
                                 <p class="label">Create a task</p>
                             </button>
                         </li>
                         <li class="element">
-                            <button id="crttsk">
+                            <button id="crtpr">
                                 <img class="taskprojico" src="/assets/gestion-de-proyectos.png">
                                 <p class="label">Create a project</p>                     
                             </button>
@@ -146,8 +144,126 @@ document.addEventListener("DOMContentLoaded", () => {
             setTimeout(() => {
                 div.classList.add("show");
             }, 10); // Delay para que el navegador detecte la animación
+
+            // Agregar evento al botón crttsk
+            document.getElementById("crttsk").addEventListener("click", () => {
+                // Cerrar el menú (divtj) antes de crear el formulario
+                if (div) {
+                    div.classList.remove("show");
+                    div.classList.add("hide");
+                    setTimeout(() => div.remove(), 300); // Coincide con la duración de la animación
+                }
+
+                let createTaskDiv = document.getElementById("create-crttsk");
+
+                if (!createTaskDiv) {
+                    createTaskDiv = document.createElement("div");
+                    createTaskDiv.id = "create-crttsk";
+                    createTaskDiv.innerHTML = `
+                        <div class="top-div">
+                            <div>
+                                <h2>Create Task</h2>
+                            </div>
+                            <div>
+                                <button id="close-crttsk">
+                                    <img class="cruz" src="/assets/cruzado.png">
+                                </button>
+                            </div>
+                        </div>
+                        <form action="" method="post">
+                            <div class="mid-div">
+                                <div class="form__group field">
+                                    <input type="input" class="form__field" placeholder="Name" required="">
+                                    <label for="name" class="form__label">Name</label>
+                                </div>
+                                <div class="form__group field">
+                                    <input type="input" class="form__field" placeholder="Category" required="">
+                                    <label for="name" class="form__label">Category</label>
+                                </div>
+                                <div class="form__group field">
+                                    <input type="input" class="form__field" placeholder="Time" required="">
+                                    <label for="name" class="form__label">Time</label>
+                                </div>
+                            </div>
+                            <div class="bot-div">
+                                <input id="save" type="submit" value="Guardar">
+                                <input id="cancel" type="button" value="Cancelar">
+                            </div>
+                        </form>
+                    `;
+
+                    document.body.appendChild(createTaskDiv);
+
+                    // Evento para cerrar el div
+                    document.getElementById("close-crttsk").addEventListener("click", () => {
+                        createTaskDiv.remove();
+                    });
+
+                    // Evento para cancelar
+                    document.getElementById("cancel").addEventListener("click", () => {
+                        createTaskDiv.remove();
+                    });
+
+                                // Agregar evento al botón crttsk
+            document.getElementById("crtpr").addEventListener("click", () => {
+                // Cerrar el menú (divtj) antes de crear el formulario
+                if (div) {
+                    div.classList.remove("show");
+                    div.classList.add("hide");
+                    setTimeout(() => div.remove(), 300); // Coincide con la duración de la animación
+                }
+
+                let createTaskDiv = document.getElementById("create-crttsk");
+
+                if (!createTaskDiv) {
+                    createTaskDiv = document.createElement("div");
+                    createTaskDiv.id = "create-crttsk";
+                    createTaskDiv.innerHTML = `
+                        <div class="top-div">
+                            <div>
+                                <h2>Create Project</h2>
+                            </div>
+                            <div>
+                                <button id="close-crttsk">
+                                    <img class="cruz" src="/assets/cruzado.png">
+                                </button>
+                            </div>
+                        </div>
+                        <form action="" method="post">
+                            <div class="mid-div">
+                                <div class="form__group field">
+                                    <input type="input" class="form__field" placeholder="Name" required="">
+                                    <label for="name" class="form__label">Name</label>
+                                </div>
+                                <div class="form__group field">
+                                    <input type="input" class="form__field" placeholder="Category" required="">
+                                    <label for="name" class="form__label">Category</label>
+                                </div>
+                                <div class="form__group field">
+                                    <input type="input" class="form__field" placeholder="Time" required="">
+                                    <label for="name" class="form__label">Date</label>
+                                </div>
+                            </div>
+                            <div class="bot-div">
+                                <input id="save" type="submit" value="Guardar">
+                                <input id="cancel" type="button" value="Cancelar">
+                            </div>
+                        </form>
+                    `;
+
+                    document.body.appendChild(createTaskDiv);
+
+                    // Evento para cerrar el div
+                    document.getElementById("close-crttsk").addEventListener("click", () => {
+                        createTaskDiv.remove();
+                    });
+
+                    // Evento para cancelar
+                    document.getElementById("cancel").addEventListener("click", () => {
+                        createTaskDiv.remove();
+                    });
+                }
+            });
         }
     });
-});
-
-
+};});});
