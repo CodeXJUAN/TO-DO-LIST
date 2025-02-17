@@ -170,14 +170,14 @@ document.addEventListener("DOMContentLoaded", () => {
                                 </button>
                             </div>
                         </div>
-                        <form action="" method="post">
+                        <form id="task-form" action="" method="post">
                             <div class="mid-div">
                                 <div class="form__group field">
-                                    <input type="input" class="form__field" placeholder="Name" required="">
+                                    <input type="input" class="form__field" placeholder="Name" required="" id="task-name">
                                     <label for="name" class="form__label">Name</label>
                                 </div>
                                 <div class="form__group field">
-                                    <select class="form__field" name="cate" id="category">
+                                    <select class="form__field" name="cate" id="task-category">
                                         <option value="none">None</option>
                                         <option value="work">Work</option>
                                         <option value="shop">Shopping</option>
@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                     <label for="name" class="form__label">Category</label>
                                 </div>
                                 <div class="form__group field">
-                                    <input type="time" class="form__field" placeholder="Time" required="">
+                                    <input type="time" class="form__field" placeholder="Time" required="" id="task-time">
                                     <label for="name" class="form__label">Time</label>
                                 </div>
                             </div>
@@ -206,6 +206,70 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     // Evento para cancelar
                     document.getElementById("cancel").addEventListener("click", () => {
+                        createTaskDiv.remove();
+                    });
+
+                    // Manejar el evento submit del formulario de tarea
+                    document.getElementById("task-form").addEventListener("submit", (e) => {
+                        e.preventDefault();
+
+                        const taskName = document.getElementById("task-name").value;
+                        const taskCategory = document.getElementById("task-category").value;
+                        const taskTime = document.getElementById("task-time").value;
+
+                        // Crear el div con la información de la tarea
+                        const taskDiv = document.createElement("div");
+                        taskDiv.className = "task-item";
+                        taskDiv.innerHTML = `
+                        <div class="task">
+                            <h3 class="title-task">${taskName}</h3>
+                            <div class="wrapper">
+                                <p class="time-task">${taskTime}</p>
+                                <p class="category-task">#${taskCategory}</p>
+                            </div>
+                        </div>
+                        <div class="check">
+                            <div class="checkbox-wrapper">
+                                <input checked="" type="checkbox">
+                                <svg viewBox="0 0 35.6 35.6">
+                                    <circle class="background" cx="17.8" cy="17.8" r="17.8"></circle>
+                                    <circle class="stroke" cx="17.8" cy="17.8" r="14.37"></circle>
+                                    <polyline class="check" points="11.78 18.12 15.55 22.23 25.17 12.87"></polyline>
+                                </svg>
+                            </div>
+                            <button class="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 69 14" class="svgIcon bin-top">
+                                    <g clip-path="url(#clip0_35_24)">
+                                        <path fill="black" d="M20.8232 2.62734L19.9948 4.21304C19.8224 4.54309 19.4808 4.75 19.1085 4.75H4.92857C2.20246 4.75 0 6.87266 0 9.5C0 12.1273 2.20246 14.25 4.92857 14.25H64.0714C66.7975 14.25 69 12.1273 69 9.5C69 6.87266 66.7975 4.75 64.0714 4.75H49.8915C49.5192 4.75 49.1776 4.54309 49.0052 4.21305L48.1768 2.62734C47.3451 1.00938 45.6355 0 43.7719 0H25.2281C23.3645 0 21.6549 1.00938 20.8232 2.62734ZM64.0023 20.0648C64.0397 19.4882 63.5822 19 63.0044 19H5.99556C5.4178 19 4.96025 19.4882 4.99766 20.0648L8.19375 69.3203C8.44018 73.0758 11.6746 76 15.5712 76H53.4288C57.3254 76 60.5598 73.0758 60.8062 69.3203L64.0023 20.0648Z">
+                                        </path>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_35_24">
+                                        <rect fill="white" height="14" width="69"></rect>
+                                    </clipPath>
+                                    </defs>
+                                </svg>
+
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 69 57" class="svgIcon bin-bottom">
+                                    <g clip-path="url(#clip0_35_22)">
+                                        <path fill="black" d="M20.8232 -16.3727L19.9948 -14.787C19.8224 -14.4569 19.4808 -14.25 19.1085 -14.25H4.92857C2.20246 -14.25 0 -12.1273 0 -9.5C0 -6.8727 2.20246 -4.75 4.92857 -4.75H64.0714C66.7975 -4.75 69 -6.8727 69 -9.5C69 -12.1273 66.7975 -14.25 64.0714 -14.25H49.8915C49.5192 -14.25 49.1776 -14.4569 49.0052 -14.787L48.1768 -16.3727C47.3451 -17.9906 45.6355 -19 43.7719 -19H25.2281C23.3645 -19 21.6549 -17.9906 20.8232 -16.3727ZM64.0023 1.0648C64.0397 0.4882 63.5822 0 63.0044 0H5.99556C5.4178 0 4.96025 0.4882 4.99766 1.0648L8.19375 50.3203C8.44018 54.0758 11.6746 57 15.5712 57H53.4288C57.3254 57 60.5598 54.0758 60.8062 50.3203L64.0023 1.0648Z">
+                                        </path>
+                                    </g>
+                                    <defs>
+                                    <clipPath id="clip0_35_22">
+                                        <rect fill="white" height="57" width="69"></rect>
+                                    </clipPath>
+                                    </defs>
+                                </svg>
+                            </button>
+                        </div>
+                        `;
+
+                        // Añadir el div al segundo div del main
+                        const mainDiv = document.querySelector("main > div:nth-child(2)");
+                        mainDiv.appendChild(taskDiv);
+
+                        // Cerrar el formulario
                         createTaskDiv.remove();
                     });
                 }
@@ -236,14 +300,14 @@ document.addEventListener("DOMContentLoaded", () => {
                                 </button>
                             </div>
                         </div>
-                        <form action="" method="post">
+                        <form id="project-form" action="" method="post">
                             <div class="mid-div">
                                 <div class="form__group field">
-                                    <input type="input" class="form__field" placeholder="Name" required="">
+                                    <input type="input" class="form__field" placeholder="Name" required="" id="project-name">
                                     <label for="name" class="form__label">Name</label>
                                 </div>
                                 <div class="form__group field">
-                                    <select class="form__field" name="cate" id="category">
+                                    <select class="form__field" name="cate" id="project-category">
                                         <option value="none">None</option>
                                         <option value="work">Work</option>
                                         <option value="shop">Shopping</option>
@@ -252,7 +316,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                     <label for="name" class="form__label">Category</label>
                                 </div>
                                 <div class="form__group field">
-                                    <input type="date" class="form__field" placeholder="Date" required="">
+                                    <input type="date" class="form__field" placeholder="Date" required="" id="project-date">
                                     <label for="name" class="form__label">Date</label>
                                 </div>
                             </div>
@@ -272,6 +336,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
                     // Evento para cancelar
                     document.getElementById("cancel").addEventListener("click", () => {
+                        createProjectDiv.remove();
+                    });
+
+                    // Manejar el evento submit del formulario de proyecto
+                    document.getElementById("project-form").addEventListener("submit", (e) => {
+                        e.preventDefault();
+
+                        const projectName = document.getElementById("project-name").value;
+                        const projectCategory = document.getElementById("project-category").value;
+                        const projectDate = document.getElementById("project-date").value;
+
+                        // Crear el div con la información del proyecto
+                        const projectDiv = document.createElement("div");
+                        projectDiv.className = "project-item";
+                        projectDiv.innerHTML = `
+                            <h3>${projectName}</h3>
+                            <p>Category: ${projectCategory}</p>
+                            <p>Date: ${projectDate}</p>
+                        `;
+
+                        // Añadir el div al segundo div del main
+                        const mainDiv = document.querySelector("main > div:nth-child(2)");
+                        mainDiv.appendChild(projectDiv);
+
+                        // Cerrar el formulario
                         createProjectDiv.remove();
                     });
                 }
