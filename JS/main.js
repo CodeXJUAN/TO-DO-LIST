@@ -177,11 +177,16 @@ document.addEventListener("DOMContentLoaded", () => {
                                     <label for="name" class="form__label">Name</label>
                                 </div>
                                 <div class="form__group field">
-                                    <input type="input" class="form__field" placeholder="Category" required="">
+                                    <select class="form__field" name="cate" id="category">
+                                        <option value="none">None</option>
+                                        <option value="work">Work</option>
+                                        <option value="shop">Shopping</option>
+                                        <option value="famy">Familiy</option>
+                                    </select>
                                     <label for="name" class="form__label">Category</label>
                                 </div>
                                 <div class="form__group field">
-                                    <input type="input" class="form__field" placeholder="Time" required="">
+                                    <input type="time" class="form__field" placeholder="Time" required="">
                                     <label for="name" class="form__label">Time</label>
                                 </div>
                             </div>
@@ -238,11 +243,16 @@ document.addEventListener("DOMContentLoaded", () => {
                                     <label for="name" class="form__label">Name</label>
                                 </div>
                                 <div class="form__group field">
-                                    <input type="input" class="form__field" placeholder="Category" required="">
+                                    <select class="form__field" name="cate" id="category">
+                                        <option value="none">None</option>
+                                        <option value="work">Work</option>
+                                        <option value="shop">Shopping</option>
+                                        <option value="famy">Familiy</option>
+                                    </select>
                                     <label for="name" class="form__label">Category</label>
                                 </div>
                                 <div class="form__group field">
-                                    <input type="input" class="form__field" placeholder="Time" required="">
+                                    <input type="date" class="form__field" placeholder="Date" required="">
                                     <label for="name" class="form__label">Date</label>
                                 </div>
                             </div>
