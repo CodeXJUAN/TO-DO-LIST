@@ -351,15 +351,23 @@ document.addEventListener("DOMContentLoaded", () => {
                         const projectDiv = document.createElement("div");
                         projectDiv.className = "project-item";
                         projectDiv.innerHTML = `
-                            <h3>${projectName}</h3>
-                            <p>Category: ${projectCategory}</p>
-                            <p>Date: ${projectDate}</p>
+                            <div class="projects">
+                                <div class="project-icon">
+                                    <div class"icon-color"></div>
+                                </div>
+                                <div class="project-name">
+                                    <h3>${projectName}</h3>
+                                    <p>${projectCategory}</p>
+                                    <p>${projectDate}</p>
+                                </div>
+                            </div>
                         `;
 
-                        // Añadir el div al segundo div del main
-                        const mainDiv = document.querySelector("main > div:nth-child(2)");
-                        mainDiv.appendChild(projectDiv);
-
+                        const projectAside = document.querySelector("aside .menu-content .bot");
+                        if (projectAside) {
+                            projectAside.appendChild(projectDiv);
+                        }
+                    
                         // Cerrar el formulario
                         createProjectDiv.remove();
                     });
