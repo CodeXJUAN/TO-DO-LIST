@@ -1,0 +1,283 @@
+@media screen and (min-width: 1024px) { 
+    
+    /* HEADER */
+    .navimg {
+        width: 2.5vw;
+    }
+    
+    .title {
+        font-size: 2vw;
+    }
+    
+    /* MENU */
+    
+    #menu-aside {
+        width: 30%;
+    }
+
+    #close-menu {
+        top: 3vh;
+        right: 3vw;
+    }
+    
+    .flecha , .icons {
+        width: 1.5vw;
+    }
+    
+    .links div {
+        display: flex;
+        align-items: center;
+        margin-left: 2vw;
+    }
+    
+    .links {
+        width: 100%;
+        padding: 5vh 0 ;
+    }
+    
+    .links:hover {
+        background-color: #F8F9FE;
+        color: #3145FF ;
+    }
+    
+    .top {
+        height: 12vh;
+    }
+    
+    .mid {
+        margin-top: 1vh;
+        height: 80vh;
+    }
+    
+    /* MAIN */
+    
+    .divdate {
+        gap: 2vw;
+    }
+    
+    /* CREATE TASK */
+    
+    #create-crttsk , #create-crtpr {
+        top: 30vh;
+        left: 35vw;
+        width: 23vw;
+        height: 55vh;
+    }
+    
+    .top-div {
+        height: 15%;
+        padding: 1vh 2vw;
+    }
+    
+    .mid-div {
+        margin-top: -2vh;
+        gap: 3vh;
+        height: 70%;
+    }
+    
+    .bot-div {
+        height: 15%;
+        gap: 2vw;  
+    }
+    
+    #close-crttsk, #close-crtpr {
+        padding: 2vh;
+        margin-right: 3vw;
+    }
+    
+    .cruz {
+        width: 2vw;
+    }
+    
+    /* TASKS */
+    
+    .task-item , .project-item {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin: ;
+    }
+    
+    .task-item {
+        background-color: rgb(135, 206, 250, .2);
+        border-radius: 5vw;
+        padding: 2vh;
+    }
+    
+    .project-item {
+        background-color: rgba(250, 212, 135, 0.2);
+        border-radius: 5vw;
+        padding: 2vh;
+    }
+    
+    .title-task {
+        font-size: 3vh;
+    }
+    
+    .wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2vw;
+    }
+    
+    .category-task , .time-task{
+        font-size: small;
+        color: grey;
+        text-transform: capitalize;
+    }
+    
+    .task {
+        width: 65%;
+        height: auto;
+    }
+    
+    .check {
+        width: 30%;
+        height: auto;
+        display: flex;
+        align-items: center;
+        gap: 3vw;
+    }
+    
+    .button {
+        width: 10vw;
+        height: 6vh;
+        border-radius: 50%;
+        background-color: rgb(20, 20, 20);
+        border: none;
+        font-weight: 600;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 2vh rgba(0, 0, 0, 0.164);
+        cursor: pointer;
+        transition-duration: 0.3s;
+        overflow: hidden;
+        position: relative;
+        gap: 0.2vh;
+    }
+      
+    .svgIcon {
+        width: 3vw;
+        transition-duration: 0.3s;
+    }
+      
+    .svgIcon path {
+        fill: white;
+    }
+      
+    .button:hover {
+        transition-duration: 0.3s;
+        background-color: rgb(255, 69, 69);
+        align-items: center;
+        gap: 0;
+    }
+      
+    .bin-top {
+        transform-origin: bottom right;
+    }
+    
+    .button:hover .bin-top {
+        transition-duration: 0.5s;
+        transform: rotate(160deg);
+    }
+    
+    
+    .checkbox-wrapper:hover .check {
+        stroke-dashoffset: 0;
+    }
+      
+    .checkbox-wrapper {
+        position: relative;
+        display: inline-block;
+        width: 10vw;
+        height: 6vh;
+    }
+    
+    .checkbox-wrapper .background {
+        fill: #3354FC;
+        transition: ease all 0.6s;
+        -webkit-transition: ease all 0.6s;
+    }
+      
+    .checkbox-wrapper .stroke {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+        stroke-width: 0.4vw;
+        stroke-dashoffset: 100;
+        stroke-dasharray: 100;
+        transition: ease all 0.6s;
+        -webkit-transition: ease all 0.6s;
+    }
+      
+    .checkbox-wrapper .check {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 0.4vw;
+        stroke-dashoffset: 22;
+        stroke-dasharray: 22;
+        transition: ease all 0.6s;
+        -webkit-transition: ease all 0.6s;
+    }
+      
+    .checkbox-wrapper input[type=checkbox] {
+        position: absolute;
+        cursor: pointer;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        margin: 0;
+        opacity: 0;
+        -appearance: none;
+        -webkit-appearance: none;
+    }
+      
+    .checkbox-wrapper input[type=checkbox]:hover {
+        cursor: pointer;
+    }
+      
+    .checkbox-wrapper input[type=checkbox]:checked + svg .background {
+        fill: #3354FC;
+    }
+      
+    .checkbox-wrapper input[type=checkbox]:checked + svg .stroke {
+        stroke-dashoffset: 0;
+    }
+    
+    .checkbox-wrapper input[type=checkbox]:checked + svg .check {
+        stroke-dashoffset: 0;
+    }
+      
+    .fade-out {
+        opacity: 0;
+        transition: opacity 0.5s ease-out;
+    }
+    
+    /* FOOTER */
+    
+    #addbtn {
+        width: 5vw;
+        height: 10vh;
+    }
+     
+    .taskprojico {
+        width: 1.5vw;
+    }
+    
+    #crtpr , #crttsk {
+        display: flex;
+        align-items: center ;
+        gap: 1vw;
+    }
+    
+    .card {
+        width: 15vw;
+        padding: 1vh 0vh;
+        gap: 1vh;
+    }
+}
