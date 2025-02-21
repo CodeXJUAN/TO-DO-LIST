@@ -256,10 +256,9 @@ document.addEventListener("DOMContentLoaded", () => {
                         // Cerrar el formulario
                         createTaskDiv.remove();
 
-                        // Agregar interactividad al checkbox
-                        const checkbox = taskDiv.querySelector(".task-checkbox");
-                        const taskTitle = taskDiv.querySelector(".task-item");
-                    
+                        const checkbox = taskDiv.querySelector(".task-checkbox"); // Selecciona el checkbox real
+                        const taskTitle = taskDiv.querySelector(".title-task"); // Selecciona el título de la tarea
+                        
                         checkbox.addEventListener("change", () => {
                             if (checkbox.checked) {
                                 taskTitle.style.textDecoration = "line-through";
@@ -410,9 +409,9 @@ document.addEventListener("DOMContentLoaded", () => {
                         createProjectDiv.remove();
                     
                         // Agregar interactividad al checkbox
-                        const checkbox = projectDiv.querySelector(".task-checkbox");
-                        const taskTitle = projectDiv.querySelector(".project-item");
-                    
+                        const checkbox = projectDiv.querySelector(".task-checkbox"); // Selecciona el checkbox real
+                        const taskTitle = projectDiv.querySelector(".title-task"); // Selecciona el título del proyecto
+                        
                         checkbox.addEventListener("change", () => {
                             if (checkbox.checked) {
                                 taskTitle.style.textDecoration = "line-through";
