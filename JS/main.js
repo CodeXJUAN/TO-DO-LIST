@@ -62,11 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
                                 <span>Tomorrow</span> 
                             </div>
                         </a>
-                    </div>
-                    <hr/>
-                    <div class="bot">
-                        <h2 class="h2proj">Projects</h2>
-                    </div>                    
+                    </div>                  
                 </div>
             `;
 
@@ -330,37 +326,72 @@ document.addEventListener("DOMContentLoaded", () => {
                     // Manejar el evento submit del formulario de proyecto
                     document.getElementById("project-form").addEventListener("submit", (e) => {
                         e.preventDefault();
-
+                    
                         const projectName = document.getElementById("project-name").value;
                         const projectCategory = document.getElementById("project-category").value;
                         const projectDate = document.getElementById("project-date").value;
-
+                    
                         // Crear el div con la información del proyecto
                         const projectDiv = document.createElement("div");
                         projectDiv.className = "project-item";
                         projectDiv.innerHTML = `
-                            <div class="projects">
-                                <div class="project-icon">
-                                    <div class"icon-color"></div>
-                                </div>
-                                <div class="project-name">
-                                    <h3>${projectName}</h3>
-                                    <p>${projectCategory}</p>
-                                    <p>${projectDate}</p>
-                                </div>
+                        <div class="task">
+                            <h3 class="title-task">${projectName}</h3>
+                            <div class="wrapper">
+                                <p class="time-task">${projectCategory}</p>
+                                <p class="category-task">#${projectDate}</p>
                             </div>
+                        </div>
+                        <div class="check">
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" class="task-checkbox">
+                                <svg viewBox="0 0 35.6 35.6">
+                                    <circle class="background" cx="17.8" cy="17.8" r="17.8"></circle>
+                                    <circle class="stroke" cx="17.8" cy="17.8" r="14.37"></circle>
+                                    <polyline class="check" points="11.78 18.12 15.55 22.23 25.17 12.87"></polyline>
+                                </svg>
+                            </div>
+                            <button class="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 69 14" class="svgIcon bin-top">
+                                    <g clip-path="url(#clip0_35_24)">
+                                        <path fill="black" d="M20.8232 2.62734L19.9948 4.21304C19.8224 4.54309 19.4808 4.75 19.1085 4.75H4.92857C2.20246 4.75 0 6.87266 0 9.5C0 12.1273 2.20246 14.25 4.92857 14.25H64.0714C66.7975 14.25 69 12.1273 69 9.5C69 6.87266 66.7975 4.75 64.0714 4.75H49.8915C49.5192 4.75 49.1776 4.54309 49.0052 4.21305L48.1768 2.62734C47.3451 1.00938 45.6355 0 43.7719 0H25.2281C23.3645 0 21.6549 1.00938 20.8232 2.62734ZM64.0023 20.0648C64.0397 19.4882 63.5822 19 63.0044 19H5.99556C5.4178 19 4.96025 19.4882 4.99766 20.0648L8.19375 69.3203C8.44018 73.0758 11.6746 76 15.5712 76H53.4288C57.3254 76 60.5598 73.0758 60.8062 69.3203L64.0023 20.0648Z"></path>
+                                    </g>
+                                </svg>
+                            </button>
+                        </div>
                         `;
-
-                        const projectAside = document.querySelector("aside .menu-content .bot");
-                        if (projectAside) {
-                            projectAside.appendChild(projectDiv);
-                        }
+                    
+                        const projectAside = document.querySelector("main > div:nth-child(2)");
+                        projectAside.appendChild(projectDiv);
                     
                         // Cerrar el formulario
                         createProjectDiv.remove();
+                    
+                        // Agregar interactividad al checkbox
+                        const checkbox = projectDiv.querySelector(".task-checkbox");
+                        const taskTitle = projectDiv.querySelector(".title-task");
+                    
+                        checkbox.addEventListener("change", () => {
+                            if (checkbox.checked) {
+                                taskTitle.style.textDecoration = "line-through";
+                                projectDiv.classList.add("fade-out");
+                                setTimeout(() => {
+                                    projectDiv.remove();
+                                }, 500);
+                            }
+                        });
+                    
+                        // Agregar interactividad al botón de eliminar
+                        const deleteButton = projectDiv.querySelector(".button");
+                        deleteButton.addEventListener("click", () => {
+                            projectDiv.classList.add("fade-out");
+                            setTimeout(() => {
+                                projectDiv.remove();
+                            }, 500);
+                        }
                     });
-                }
+                };
             });
-        }
+        };
     });
 });

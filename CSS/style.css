@@ -126,18 +126,7 @@ nav , .mainheader  {
     margin-top: 5vh;
     display: flex;
     flex-direction: column;
-    height: 20vh;
-}
-
-hr {
-    margin-top: 1vh;
-    margin-left: 3vw;
-    width: 90%;
-    opacity: .5 ;
-}
-
-.bot {
-    height: 70vh;
+    height: 90vh;
 }
 
 .h2proj {
@@ -179,8 +168,10 @@ hr {
     width: 70vw;
     height: 50vh;
     border-radius: 3vw;
+    background-color: #ffffff;
     box-shadow: 0 0 2vh 1vw rgb(25, 113, 194, 0.5);
     padding: 1vh 2vw;
+    z-index: 999;
 }
 
 .top-div {
@@ -327,11 +318,23 @@ form {
 
 /* TASKS */
 
-.task-item {
+.task-item , .project-item {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin: 6vw;
+}
+
+.task-item {
+    background-color: rgb(135, 206, 250, .2);
+    border-radius: 5vw;
+    padding: 2vh;
+}
+
+.project-item {
+    background-color: rgba(250, 212, 135, 0.2);
+    border-radius: 5vw;
+    padding: 2vh;
 }
 
 .title-task {
@@ -351,12 +354,12 @@ form {
 }
 
 .task {
-    width: 50%;
+    width: 65%;
     height: auto;
 }
 
 .check {
-    width: 40%;
+    width: 30%;
     height: auto;
     display: flex;
     align-items: center;
