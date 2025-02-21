@@ -50,12 +50,6 @@ document.addEventListener("DOMContentLoaded", () => {
                         </button>
                     </div>
                     <div class="mid">
-                        <a class="links" href="/pages/inbox.html">
-                            <div>
-                                <img class="icons" src="/assets/bandeja-de-entrada.png">
-                                <span>Inbox</span> 
-                            </div>
-                        </a>
                         <a class="links" href="/index.html">
                             <div>
                                 <img class="icons" src="/assets/estrella.png">
@@ -66,12 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
                             <div>
                                 <img class="icons" src="/assets/calendario.png">
                                 <span>Tomorrow</span> 
-                            </div>
-                        </a>
-                        <a class="links" href="/pages/anytm.html">
-                            <div>
-                                <img class="icons" src="/assets/lista-de-quehaceres.png">
-                                <span>Anytime</span> 
                             </div>
                         </a>
                     </div>
