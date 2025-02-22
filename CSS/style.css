@@ -12,8 +12,16 @@ header {
 
 nav , .mainheader  {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+}
+
+nav{
+ justify-content: space-between
+}
+
+.mainheader {
+    margin-top: 5vh;
+    justify-content: left;
 }
 
 .navimg {
@@ -21,7 +29,7 @@ nav , .mainheader  {
     height: auto;
 }
 
-.navbtn , #btnflt {
+.navbtn {
     border: none;
     background-color: transparent;
 }
@@ -142,10 +150,6 @@ nav , .mainheader  {
 #date , #datetom {
     color: #969696 ;
     font-weight: 300;
-}
-
-#btnflt  {
-    margin: 4vh 10vw;
 }
 
 /* CREATE TASK */

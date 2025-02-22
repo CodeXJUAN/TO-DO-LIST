@@ -214,7 +214,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         </div>
                         <div class="check">
                             <div class="checkbox-wrapper">
-                                <input checked="" type="checkbox" class="task-checkbox">
+                                <input type="checkbox" class="task-checkbox">
                                 <svg viewBox="0 0 35.6 35.6">
                                     <circle class="background" cx="17.8" cy="17.8" r="17.8"></circle>
                                     <circle class="stroke" cx="17.8" cy="17.8" r="14.37"></circle>
